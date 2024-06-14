@@ -1,3 +1,4 @@
+/* messagePage.css */
 .userInput {
   display: flex;
   gap: 20px;
@@ -16,20 +17,78 @@
   flex: 0 1 calc(25% - 20px);
   max-width: calc(25% - 20px);
 }
+
 p {
   font-family: "ggsans", sans-serif;
 }
+
 .messageUsername {
   font-family: "ggsans", sans-serif;
 }
+
 .texts-message {
   gap: -20px;
 }
 
 .messageMessage {
   transform: translateY(-3px);
+  max-width: 70vh;
 }
+
 .messageTime {
   font-size: x-small;
   transform: translateY(1px);
+}
+
+.full-message img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.messages {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #313338;
+  padding: 10px;
+  width: 50%;
+  border-radius: 20px;
+}
+.containter {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* Style dla urządzeń mobilnych */
+@media (max-width: 1480px) {
+  .userPanel {
+    flex: 0 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  .messageMessage {
+    /* max-width: 30vh; */
+  }
+}
+@media (max-width: 760px) {
+  .userPanel {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+
+  .messageMessage {
+    /* max-width: 12vh; */
+  }
+}
+@media (max-width: 480px) {
+  .userPanel {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
 }

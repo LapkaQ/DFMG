@@ -125,7 +125,7 @@ export default function Message() {
               {message.time}
             </p>
           </div>
-          <p className="messageMessage gg-sans font-[400] text-[#d9dcdf] break-words max-w-[800px]">
+          <p className="messageMessage gg-sans font-[400] text-[#d9dcdf] break-words">
             {message.message}
           </p>
         </div>
