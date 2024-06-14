@@ -3,6 +3,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-ExtraBold.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-Normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
