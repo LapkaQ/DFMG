@@ -26,14 +26,17 @@ export default function Home({ params }) {
   }, []);
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    console.log(`Fetching user with ID: ${id}`);
 
     try {
       const response = await fetch(`/api/user/${id}`);
+      console.log(`API response status: ${response.status}`);
       if (!response.ok) {
         throw new Error("Failed to fetch user");
       }
 
       const userData = await response.json();
+      console.log("User data fetched successfully:", userData);
       setUser(userData);
       setError(null);
     } catch (error) {
@@ -42,6 +45,7 @@ export default function Home({ params }) {
       setUser(null);
     }
   };
+
   const InputHandler = (e) => {
     setId(e.target.value);
   };
