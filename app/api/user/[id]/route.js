@@ -8,7 +8,7 @@ export async function GET(res, req) {
         Authorization: `Bot ${token}`,
       },
     });
-
+    console.log(response.status);
     if (!response.ok) {
       throw new Error("Failed to fetch user data");
     }
