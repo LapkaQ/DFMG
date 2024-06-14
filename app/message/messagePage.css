@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-ExtraBold.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-Normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ggsans";
+  src: url("../fonts/ggsans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.userInput {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.usersInputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.userPanel {
+  flex: 0 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+}
+p {
+  font-family: "ggsans", sans-serif;
+}
+.messageUsername {
+  font-family: "ggsans", sans-serif;
+}
+.texts-message {
+  gap: -20px;
+}
+
+.messageMessage {
+  transform: translateY(-3px);
+}
+.messageTime {
+  font-size: x-small;
+  transform: translateY(1px);
+}

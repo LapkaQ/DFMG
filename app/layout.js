@@ -1,7 +1,40 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
+import Providers from "./providers";
+import Navigation from "./components/navigation";
+import Footer from "./components/footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import localFont from "next/font/local";
+
+const ggsans = localFont({
+  src: [
+    {
+      path: "./fonts/ggsans-ExtraBold.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ggsans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ggsans-Normal.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ggsans-Semibold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+});
+
+// const poppins = Poppins({
+//   weight: ["400", "500", "600", "700", "800", "900"],
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +44,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={ggsans.className}>
+        <Navigation />
+        <Providers>{children}</Providers>
+        <Footer />
+      </body>
     </html>
   );
 }
