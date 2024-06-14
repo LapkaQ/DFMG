@@ -73,7 +73,7 @@ p {
   }
 
   .messageMessage {
-    /* max-width: 30vh; */
+    max-width: 30vh;
   }
 }
 @media (max-width: 760px) {
@@ -83,12 +83,11 @@ p {
   }
 
   .messageMessage {
-    /* max-width: 12vh; */
+    max-width: 12vh;
   }
 }
 @media (max-width: 480px) {
   .userPanel {
     flex: 0 1 100%;
-    max-width: 100%;
   }
 }
