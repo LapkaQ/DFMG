@@ -57,6 +57,9 @@ p {
   width: 50%;
   border-radius: 20px;
 }
+.decoration {
+  scale: 1.15;
+}
 .containter {
   position: relative;
   width: 100%;

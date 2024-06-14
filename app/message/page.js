@@ -113,10 +113,10 @@ export default function Message() {
           {message.user.avatar_dec && (
             <Image
               alt={message.user.username}
-              className="object-cover absolute z-50"
-              height={40}
+              className="object-cover absolute z-50 decoration"
+              height={50}
               src={message.user.avatar_dec}
-              width={40}
+              width={50}
             />
           )}
           <Image
