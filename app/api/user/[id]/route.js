@@ -24,13 +24,16 @@ export async function GET(res, req) {
       : null;
 
     const banner_color = user.banner_color;
-
+    const avatar_dec = user.avatar_decoration_data
+      ? `https://cdn.discordapp.com/avatar-decoration-presets/${user.avatar_decoration_data.asset}.png`
+      : null;
     const banner = user.banner
       ? user.banner.startsWith("a_")
         ? `https://cdn.discordapp.com/banners/${user.id}/${user.banner}.gif?size=4096`
         : `https://cdn.discordapp.com/banners/${user.id}/${user.banner}.png?size=4096`
       : null;
     console.log(user);
+
     return new Response(
       JSON.stringify({
         username: user.username,
@@ -38,6 +41,7 @@ export async function GET(res, req) {
         banner_color,
         banner,
         name: user.global_name,
+        avatar_dec,
       }),
       {
         status: 200,

@@ -109,13 +109,24 @@ export default function Message() {
   const CreateMessage = () => {
     return messages.map((message, index) => (
       <div key={index} className="full-message flex flex-row items-start gap-3">
-        <Image
-          alt={message.user.username}
-          className="object-cover rounded-3xl"
-          height={40}
-          src={message.user.avatar}
-          width={40}
-        />
+        <div className="relative">
+          {message.user.avatar_dec && (
+            <Image
+              alt={message.user.username}
+              className="object-cover absolute z-50"
+              height={40}
+              src={message.user.avatar_dec}
+              width={40}
+            />
+          )}
+          <Image
+            alt={message.user.username}
+            className="object-cover rounded-3xl"
+            height={40}
+            src={message.user.avatar}
+            width={40}
+          />
+        </div>
         <div className="texts-message flex flex-col">
           <div className="top-message flex flex-row items-end gap-2">
             <p className="messageUsername gg-sans text-base font-[500]">
