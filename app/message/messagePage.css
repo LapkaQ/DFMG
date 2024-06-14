@@ -37,7 +37,7 @@ p {
 
 .messageTime {
   font-size: x-small;
-  transform: translateY(1px);
+  transform: translateY(-4px);
 }
 
 .full-message img {

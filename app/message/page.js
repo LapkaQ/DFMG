@@ -117,7 +117,7 @@ export default function Message() {
           width={40}
         />
         <div className="texts-message flex flex-col">
-          <div className="top-message flex flex-row items-center gap-2">
+          <div className="top-message flex flex-row items-end gap-2">
             <p className="messageUsername gg-sans text-base font-[500]">
               {message.user.name}
             </p>
