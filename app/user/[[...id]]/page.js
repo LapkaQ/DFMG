@@ -1,4 +1,6 @@
 "use client";
+import "dotenv/config";
+
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -11,6 +13,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import Link from "next/link";
+require("dotenv").config();
 
 export default function Home({ params }) {
   const router = useRouter();

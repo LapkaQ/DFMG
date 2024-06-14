@@ -1,5 +1,8 @@
+require("dotenv").config();
+import "dotenv/config";
 export async function GET(res, req) {
   const token = process.env.DISCORD_TOKEN;
+  console.log(process.env.DISCORD_TOKEN);
   const id = req.params.id;
   try {
     const response = await fetch(`https://discord.com/api/users/${id}`, {
