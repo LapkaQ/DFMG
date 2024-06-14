@@ -51,10 +51,9 @@ p {
   margin-right: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 20px;
   background-color: #313338;
-  padding: 10px;
+  padding: 40px;
   width: 50%;
   border-radius: 20px;
 }
