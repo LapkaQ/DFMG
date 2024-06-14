@@ -1,6 +1,5 @@
 export async function GET(res, req) {
-  const token =
-    "MTI1MDc0MDkyMzA4OTAyNzA4Mw.GujlR8.rr3KE3H_jIALKLCX_AnfYCINPZC9J0es9QQeuw";
+  const token = process.env.DISCORD_TOKEN;
   const id = req.params.id;
   try {
     const response = await fetch(`https://discord.com/api/users/${id}`, {
