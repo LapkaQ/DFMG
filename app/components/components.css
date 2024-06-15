@@ -74,6 +74,6 @@ nav ul {
   gap: 20px;
 }
 .text-foreground {
-  --tw-text-opacity: 1;
-  color: hsl(0deg 0% 100%);
+  --tw-text-opacity: 1 !important;
+  color: hsl(0deg 0% 100%) !important;
 }
