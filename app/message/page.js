@@ -60,7 +60,10 @@ export default function Message() {
       {
         user: users[index].user,
         time: users[index].userMessage.dataInput1,
-        message: users[index].userMessage.messageInput1,
+        message: users[index].userMessage.messageInput1.replace(
+          /<\/br>/g,
+          "\n"
+        ),
       },
     ]);
     setUsers((prevUsers) => {
@@ -80,6 +83,7 @@ export default function Message() {
       return newMessages;
     });
   };
+
   const handleRemoveAllMessage = () => {
     setMessages([]);
   };
@@ -106,10 +110,11 @@ export default function Message() {
       return newUsers;
     });
   };
+
   const CreateMessage = () => {
     return messages.map((message, index) => (
-      <div key={index} className="full-message flex flex-row items-start gap-3">
-        <div className="relative">
+      <div key={index} className="full-message flex flex-row items-start gap-1">
+        <div className="relative p-2">
           {message.user.avatar_dec && (
             <Image
               alt={message.user.username}
@@ -127,8 +132,8 @@ export default function Message() {
             width={40}
           />
         </div>
-        <div className="texts-message flex flex-col">
-          <div className="top-message flex flex-row items-end gap-2">
+        <div className="texts-message flex flex-col  p-1">
+          <div className="top-message flex flex-row items-end gap-3">
             <p className="messageUsername gg-sans text-base font-[500]">
               {message.user.name}
             </p>
@@ -136,7 +141,7 @@ export default function Message() {
               {message.time}
             </p>
           </div>
-          <p className="messageMessage gg-sans font-[400] text-[#d9dcdf] break-words">
+          <p className="messageMessage gg-sans font-[400] text-[#d9dcdf] break-words whitespace-pre-wrap">
             {message.message}
           </p>
         </div>

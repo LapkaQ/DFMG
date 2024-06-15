@@ -33,11 +33,12 @@ p {
 .messageMessage {
   transform: translateY(-3px);
   max-width: 70vh;
+  white-space: pre-wrap;
 }
 
 .messageTime {
-  font-size: x-small;
-  transform: translateY(-4px);
+  font-size: 11px;
+  transform: translateY(-3px) scale(1.1);
 }
 
 .full-message img {
