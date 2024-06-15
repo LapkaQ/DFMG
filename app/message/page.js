@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Card, CardFooter, Input, Button } from "@nextui-org/react";
 import { useState } from "react";
 import UserPanel from "../components/UserPanel";
+import Header from "../components/header";
 
 export default function Message() {
   const [users, setUsers] = useState([]);
@@ -43,7 +44,11 @@ export default function Message() {
       const newUsers = [...prevUsers];
       if (name === "input1") {
         newUsers[index].userId = value;
-      } else if (name === "dataInput1" || name === "messageInput1") {
+      } else if (
+        name === "dataInput1" ||
+        name === "messageInput1" ||
+        name === "colorInput1"
+      ) {
         newUsers[index].userMessage = {
           ...newUsers[index].userMessage,
           [name]: value,
@@ -60,6 +65,7 @@ export default function Message() {
       {
         user: users[index].user,
         time: users[index].userMessage.dataInput1,
+        color: users[index].userMessage.colorInput1,
         message: users[index].userMessage.messageInput1.replace(
           /<\/br>/g,
           "\n"
@@ -71,6 +77,7 @@ export default function Message() {
       newUsers[index].userMessage = {
         dataInput1: "",
         messageInput1: "",
+        colorInput1: "",
       };
       return newUsers;
     });
@@ -97,6 +104,7 @@ export default function Message() {
         userMessage: {
           dataInput1: "",
           messageInput1: "",
+          colorInput1: "",
         },
         error: null,
       },
@@ -134,7 +142,10 @@ export default function Message() {
         </div>
         <div className="texts-message flex flex-col  p-1">
           <div className="top-message flex flex-row items-end gap-3">
-            <p className="messageUsername gg-sans text-base font-[500]">
+            <p
+              className="messageUsername gg-sans text-base font-[500]"
+              style={{ color: message.color }}
+            >
               {message.user.name}
             </p>
             <p className="messageTime gg-sans font-[400] text-[#a6aeb8]">
@@ -151,6 +162,7 @@ export default function Message() {
 
   return (
     <main className="flex flex-col gap-20 ">
+      <Header text="Discord Message Creator" custom="True" height="100" />
       <div className="usersInputs flex flex-row justify-evenly items-center gap-20">
         {users.map((user, index) => (
           <UserPanel

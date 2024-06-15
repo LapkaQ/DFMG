@@ -73,3 +73,7 @@ nav ul {
   flex-direction: row;
   gap: 20px;
 }
+.text-foreground {
+  --tw-text-opacity: 1;
+  color: hsl(0deg 0% 100%);
+}
