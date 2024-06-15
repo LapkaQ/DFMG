@@ -161,7 +161,7 @@ export default function Message() {
   };
 
   return (
-    <main className="flex flex-col gap-20 ">
+    <main className="flex flex-col gap-20">
       <Header text="Discord Message Creator" custom="True" height="100" />
       <div className="usersInputs flex flex-row justify-evenly items-center gap-20">
         {users.map((user, index) => (
@@ -186,7 +186,7 @@ export default function Message() {
       </div>
       {messages.length > 0 && (
         <>
-          <div className="messages ">
+          <div className="messages">
             <div className="containter">{CreateMessage()}</div>
           </div>
           <div className="remove-last-message flex justify-center mt-4 gap-5">
@@ -200,11 +200,11 @@ export default function Message() {
             </Button>
             <Button
               color="danger"
-              aria-label="Remove Last Message"
+              aria-label="Remove All Messages"
               onClick={handleRemoveAllMessage}
               startContent={<FaTrash color="white" />}
             >
-              Remove<span className="font-black">All</span>Message
+              Remove<span className="font-black">All</span>Messages
             </Button>
           </div>
         </>

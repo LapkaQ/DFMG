@@ -34,6 +34,7 @@ p {
   transform: translateY(-3px);
   max-width: 70vh;
   white-space: pre-wrap;
+  line-height: 1.6;
 }
 
 .messageTime {
