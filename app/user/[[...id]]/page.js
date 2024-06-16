@@ -44,7 +44,7 @@ export default function Home({ params }) {
       setError(null);
     } catch (error) {
       console.error("Error fetching user:", error);
-      setError("Podaj prawidłowe id!");
+      setError("Please enter a valid ID!");
       setUser(null);
     }
   };
@@ -79,22 +79,25 @@ export default function Home({ params }) {
         </form>
         {user && (
           <div className="flex justify-center items-center flex-row gap-2 flex-wrap">
-            <Card isFooterBlurred radius="lg" className="border-none ">
-              <Link href={user.avatar} target="_blank">
-                <Image
-                  alt={user.username}
-                  className="object-cover"
-                  height={200}
-                  src={user.avatar}
-                  width={200}
-                />
-              </Link>
-              <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                <p className="text-tiny font-[700] text-white/80 drop-shadow-2xl nicknameCard gg-sans">
-                  {user.username}
-                </p>
-              </CardFooter>
-            </Card>
+            {user.avatar && (
+              <Card isFooterBlurred radius="lg" className="border-none ">
+                <Link href={user.avatar} target="_blank">
+                  <Image
+                    alt={user.username}
+                    className="object-cover"
+                    height={200}
+                    src={user.avatar}
+                    width={200}
+                  />
+                </Link>
+                <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+                  <p className="text-tiny font-[700] text-white/80 drop-shadow-2xl nicknameCard gg-sans">
+                    {user.username}
+                  </p>
+                </CardFooter>
+              </Card>
+            )}
+
             {user.banner && (
               <Card
                 isFooterBlurred
@@ -111,6 +114,9 @@ export default function Home({ params }) {
                   />
                 </Link>
               </Card>
+            )}
+            {!user.banner && !user.avatar && (
+              <h1>This user does not have an avatar and banner</h1>
             )}
           </div>
         )}

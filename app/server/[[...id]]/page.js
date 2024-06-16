@@ -45,7 +45,7 @@ export default function Home({ params }) {
       setError(null);
     } catch (error) {
       console.error("Error fetching guild:", error);
-      setError("Podaj prawidłowe id!");
+      setError("Please enter a valid ID!");
       setGuild(null);
     }
   };

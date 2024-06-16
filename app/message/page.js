@@ -32,7 +32,7 @@ export default function Message() {
       console.error("Error fetching user:", error);
       setUsers((prevUsers) => {
         const newUsers = [...prevUsers];
-        newUsers[index].error = "Podaj prawidłowe id!";
+        newUsers[index].error = "Please enter a valid ID!";
         newUsers[index].user = null;
         return newUsers;
       });
