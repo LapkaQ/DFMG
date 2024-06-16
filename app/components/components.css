@@ -66,14 +66,34 @@ nav {
 
   font-size: 20px;
 }
-nav ul {
+nav > ul {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 20px;
 }
+nav > ul > li {
+  position: relative;
+}
 .text-foreground {
   --tw-text-opacity: 1 !important;
   color: hsl(0deg 0% 100%) !important;
+}
+.link {
+  min-width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.linkActive {
+  background: rgb(0, 156, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 156, 255, 1) 0%,
+    rgba(0, 199, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: 0px 0px 5px rgb(0, 156, 255); */
 }

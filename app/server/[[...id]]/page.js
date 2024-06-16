@@ -11,6 +11,7 @@ import {
   CardFooter,
   Input,
   Button,
+  Code,
 } from "@nextui-org/react";
 import Link from "next/link";
 require("dotenv").config();
@@ -18,7 +19,7 @@ require("dotenv").config();
 export default function Home({ params }) {
   const router = useRouter();
   const [id, setId] = useState("");
-  const [user, setUser] = useState(null);
+  const [guild, setGuild] = useState(null);
   const [error, setError] = useState(null);
   useEffect(() => {
     if (params.id != null) {
@@ -29,23 +30,23 @@ export default function Home({ params }) {
   }, []);
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Fetching user with ID: ${id}`);
+    console.log(`Fetching guild with ID: ${id}`);
 
     try {
-      const response = await fetch(`/api/user/${id}`);
+      const response = await fetch(`/api/server/${id}`);
       console.log(`API response status: ${response.status}`);
       if (!response.ok) {
-        throw new Error("Failed to fetch user");
+        throw new Error("Failed to fetch guild");
       }
 
-      const userData = await response.json();
-      console.log("User data fetched successfully:", userData);
-      setUser(userData);
+      const guildData = await response.json();
+      console.log("Guild data fetched successfully:", guildData);
+      setGuild(guildData);
       setError(null);
     } catch (error) {
-      console.error("Error fetching user:", error);
+      console.error("Error fetching guild:", error);
       setError("Podaj prawidłowe id!");
-      setUser(null);
+      setGuild(null);
     }
   };
 
@@ -54,7 +55,12 @@ export default function Home({ params }) {
   };
   return (
     <main className="flex justify-between items-center gap-5 flex-col">
-      <Header text="Discord Profile Viewer" custom="True" height="100" />
+      <Header text="Discord Server Viewer" custom="True" height="100" />
+
+      <Code color="warning">
+        To receive the server icon and splash, the server must have enabled
+        community!
+      </Code>
 
       <div className="flex justify-center items-center gap-5 flex-col grow">
         <form
@@ -65,7 +71,7 @@ export default function Home({ params }) {
             type="text"
             variant="underlined"
             color="secondary"
-            label="User ID"
+            label="Guild ID"
             onChange={InputHandler}
             value={id}
             classNames={{
@@ -77,36 +83,35 @@ export default function Home({ params }) {
             Submit
           </Button>
         </form>
-        {user && (
+        {guild && (
           <div className="flex justify-center items-center flex-row gap-2 flex-wrap">
             <Card isFooterBlurred radius="lg" className="border-none ">
-              <Link href={user.avatar} target="_blank">
+              <Link href={guild.icon} target="_blank">
                 <Image
-                  alt={user.username}
+                  alt={guild.name}
                   className="object-cover"
                   height={200}
-                  src={user.avatar}
+                  src={guild.icon}
                   width={200}
                 />
               </Link>
               <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                 <p className="text-tiny font-[700] text-white/80 drop-shadow-2xl nicknameCard gg-sans">
-                  {user.username}
+                  {guild.name}
                 </p>
               </CardFooter>
             </Card>
-            {user.banner && (
+            {guild.splash && (
               <Card
                 isFooterBlurred
                 radius="lg"
                 className="border-none  max-h-[200px] flex justify-center"
               >
-                <Link href={user.banner} target="_blank">
+                <Link href={guild.splash} target="_blank">
                   <Image
-                    alt={user.username}
-                    className="object-cover"
+                    alt={guild.name}
                     height={600}
-                    src={user.banner}
+                    src={guild.splash}
                     width={600}
                   />
                 </Link>

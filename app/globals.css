@@ -64,6 +64,12 @@ body {
   min-height: 100vh;
   height: 100%;
 }
+body::-webkit-scrollbar {
+  width: 0%;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
 main {
   /* background-color: rebeccapurple; */
   flex-grow: 1;

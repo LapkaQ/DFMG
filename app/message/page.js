@@ -4,6 +4,7 @@ import { FaPlusCircle, FaMinusCircle, FaTrash } from "react-icons/fa";
 import "./messagePage.css";
 import Image from "next/image";
 import { Card, CardFooter, Input, Button } from "@nextui-org/react";
+
 import { useState } from "react";
 import UserPanel from "../components/UserPanel";
 import Header from "../components/header";
