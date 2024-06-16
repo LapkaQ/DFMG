@@ -7,9 +7,11 @@ export default function Navigation() {
 
   return (
     <nav className="backdrop-blur-3xl bg-white/0">
-      <Link href="/">
-        <p className="font-[300] -skew-x-12 ml-5 gg-sans">DCFaker</p>
-      </Link>
+      <div className="logoText ">
+        <Link href="/">
+          <p className="font-[300] -skew-x-12  gg-sans">DCFaker</p>
+        </Link>
+      </div>
       <ul className="mr-5">
         <li>
           <Link

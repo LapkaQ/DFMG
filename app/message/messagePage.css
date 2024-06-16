@@ -69,6 +69,7 @@ p {
   flex-direction: column;
   gap: 15px;
 }
+
 /* Style dla urządzeń mobilnych */
 @media (max-width: 1480px) {
   .userPanel {

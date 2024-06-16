@@ -57,7 +57,7 @@ export default function Home({ params }) {
     <main className="flex justify-between items-center gap-5 flex-col">
       <Header text="Discord Server Viewer" custom="True" height="100" />
 
-      <Code color="warning">
+      <Code color="warning" className="dcWarning">
         To receive the server icon and splash, the server must have enabled
         community!
       </Code>
