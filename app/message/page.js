@@ -123,7 +123,7 @@ export default function Message() {
   const CreateMessage = () => {
     return messages.map((message, index) => (
       <div key={index} className="full-message flex flex-row items-start gap-1">
-        <div className="relative p-2">
+        <div className="relative p-2 ">
           {message.user.avatar_dec && (
             <Image
               alt={message.user.username}
@@ -135,21 +135,25 @@ export default function Message() {
           )}
           <Image
             alt={message.user.username}
-            className="object-cover rounded-3xl"
+            className="object-cover rounded-3xl "
             height={40}
             src={message.user.avatar}
             width={40}
+            style={{
+              width: "40px",
+              height: "40px",
+            }}
           />
         </div>
         <div className="texts-message flex flex-col  p-1">
-          <div className="top-message flex flex-row items-end gap-3">
+          <div className="top-message flex flex-row items-end gap-3 	">
             <p
               className="messageUsername gg-sans text-base font-[500]"
               style={{ color: message.color }}
             >
               {message.user.name}
             </p>
-            <p className="messageTime gg-sans font-[400] text-[#a6aeb8]">
+            <p className="messageTime gg-sans font-[400] text-[#a6aeb8] text-nowrap">
               {message.time}
             </p>
           </div>
@@ -162,7 +166,7 @@ export default function Message() {
   };
 
   return (
-    <main className="flex flex-col gap-20">
+    <main className="flex flex-col gap-20 items-center">
       <Header text="Discord Message Creator" custom="True" height="100" />
       <div className="usersInputs flex flex-row justify-evenly items-center gap-20">
         {users.map((user, index) => (
@@ -190,7 +194,7 @@ export default function Message() {
           <div className="messages">
             <div className="containter">{CreateMessage()}</div>
           </div>
-          <div className="remove-last-message flex justify-center mt-4 gap-5">
+          <div className="remove-last-message flex justify-center mt-4 gap-5 flex-wrap">
             <Button
               color="danger"
               aria-label="Remove Last Message"

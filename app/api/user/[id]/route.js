@@ -5,7 +5,7 @@ export async function GET(res, req) {
   console.log(process.env.DISCORD_TOKEN);
   const id = req.params.id;
   try {
-    const response = await fetch(`https://discord.com/api/users/${id}`, {
+    const response = await fetch(`https://discord.com/api/v10/users/${id}`, {
       headers: {
         Authorization: `Bot ${token}`,
       },

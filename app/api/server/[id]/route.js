@@ -6,7 +6,7 @@ export async function GET(res, req) {
   const id = req.params.id;
   try {
     const response = await fetch(
-      `https://discord.com/api/guilds/${id}/preview`,
+      `https://discord.com/api/v10/guilds/${id}/preview`,
       {
         headers: {
           Authorization: `Bot ${token}`,

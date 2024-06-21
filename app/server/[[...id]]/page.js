@@ -14,6 +14,7 @@ import {
   Code,
 } from "@nextui-org/react";
 import Link from "next/link";
+import InfoBox from "@/app/components/InfoBox";
 require("dotenv").config();
 
 export default function Home({ params }) {
@@ -57,11 +58,14 @@ export default function Home({ params }) {
     <main className="flex justify-between items-center gap-5 flex-col">
       <Header text="Discord Server Viewer" custom="True" height="100" />
 
-      <Code color="warning" className="dcWarning">
+      {/* <Code color="warning" className="dcWarning">
         To receive the server icon and splash, the server must have enabled
         community!
-      </Code>
-
+      </Code> */}
+      <InfoBox>
+        To receive the server icon and splash, the server must have enabled
+        community!
+      </InfoBox>
       <div className="flex justify-center items-center gap-5 flex-col grow">
         <form
           onSubmit={handleFormSubmit}

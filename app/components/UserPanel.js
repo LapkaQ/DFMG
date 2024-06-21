@@ -20,13 +20,13 @@ export default function UserPanel(props) {
   };
 
   return (
-    <div className="userPanel">
+    <div className="userPanel min-w-[31vw] max-w-[31vw] relative">
       <Card
         isBlurred
         shadow="none"
         className="p-2 bg-white/5 text-white text-center"
       >
-        <div className="userInput flex-row-reverse">
+        <div className="userInput flex-row-reverse flex-wrap-reverse">
           <Button
             isIconOnly
             color="danger"
@@ -60,7 +60,7 @@ export default function UserPanel(props) {
           </form>
 
           {user.user && (
-            <Card isFooterBlurred radius="lg" className="border-none">
+            <Card isFooterBlurred radius="lg" className="border-none ">
               <Image
                 alt={user.user.username}
                 className="object-cover"

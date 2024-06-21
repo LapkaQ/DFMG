@@ -56,7 +56,7 @@ p {
   gap: 20px;
   background-color: #313338;
   padding: 40px;
-  width: 50%;
+  width: 50vw;
   border-radius: 20px;
 }
 .decoration {
@@ -85,10 +85,14 @@ p {
   .userPanel {
     flex: 0 1 100%;
     max-width: 100%;
+    /* width: 100vw; */
   }
 
   .messageMessage {
     max-width: 12vh;
+  }
+  .messages {
+    width: 90vw;
   }
 }
 @media (max-width: 480px) {
