@@ -20,7 +20,7 @@ export default function UserPanel(props) {
   };
 
   return (
-    <div className="userPanel min-w-[31vw] max-w-[31vw] relative">
+    <div className="min-w-[31vw] relative shrink basis-auto">
       <Card
         isBlurred
         shadow="none"
