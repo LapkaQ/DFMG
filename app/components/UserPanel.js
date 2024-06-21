@@ -26,7 +26,7 @@ export default function UserPanel(props) {
         shadow="none"
         className="p-2 bg-white/5 text-white text-center"
       >
-        <div className="userInput flex-row-reverse flex-wrap-reverse">
+        <div className="userInput flex gap-[20px] justify-center items-center flex-row-reverse flex-wrap-reverse">
           <Button
             isIconOnly
             color="danger"
