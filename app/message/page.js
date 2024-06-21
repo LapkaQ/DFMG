@@ -168,7 +168,7 @@ export default function Message() {
   return (
     <main className="flex flex-col gap-20 items-center">
       <Header text="Discord Message Creator" custom="True" height="100" />
-      <div className="usersInputs flex flex-row justify-evenly items-center gap-20">
+      <div className="usersInputs flex flex-row flex-wrap justify-center items-center gap-[20px]">
         {users.map((user, index) => (
           <UserPanel
             key={index}
