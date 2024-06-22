@@ -1,6 +1,13 @@
 "use client";
 import Image from "next/image";
-import { Card, CardFooter, Input, Button, Checkbox } from "@nextui-org/react";
+import {
+  Card,
+  CardFooter,
+  Input,
+  Button,
+  Checkbox,
+  Tooltip,
+} from "@nextui-org/react";
 import { FaMinusCircle } from "react-icons/fa";
 import { useState } from "react";
 
@@ -96,16 +103,24 @@ export default function UserPanel(props) {
               </Checkbox>
               <div className="flex flex-row justify-center items-center gap-2">
                 {colorStatus && (
-                  <Input
-                    type="text"
-                    variant="flat"
+                  <Tooltip
                     color="secondary"
-                    label="Color"
-                    name="colorInput1"
-                    onChange={(e) => InputHandler(e, index)}
-                    value={user.userMessage.colorInput1}
-                    isDisabled={!colorStatus}
-                  />
+                    content="You can use hex, rgb, hsl colors or provide a name, e.g. purple."
+                    offset={30}
+                    delay={0}
+                    closeDelay={0}
+                  >
+                    <Input
+                      type="text"
+                      variant="flat"
+                      color="secondary"
+                      label="Color"
+                      name="colorInput1"
+                      onChange={(e) => InputHandler(e, index)}
+                      value={user.userMessage.colorInput1}
+                      isDisabled={!colorStatus}
+                    />
+                  </Tooltip>
                 )}
                 <Input
                   type="text"
@@ -116,15 +131,23 @@ export default function UserPanel(props) {
                   onChange={(e) => InputHandler(e, index)}
                   value={user.userMessage.dataInput1}
                 />
-                <Input
-                  type="text"
-                  variant="flat"
+                <Tooltip
                   color="secondary"
-                  label="Message"
-                  name="messageInput1"
-                  onChange={(e) => InputHandler(e, index)}
-                  value={user.userMessage.messageInput1}
-                />
+                  content="To move to the next line, enter <nl>"
+                  offset={30}
+                  delay={0}
+                  closeDelay={0}
+                >
+                  <Input
+                    type="text"
+                    variant="flat"
+                    color="secondary"
+                    label="Message"
+                    name="messageInput1"
+                    onChange={(e) => InputHandler(e, index)}
+                    value={user.userMessage.messageInput1}
+                  />
+                </Tooltip>
               </div>
               <Button color="secondary" type="submit">
                 Create

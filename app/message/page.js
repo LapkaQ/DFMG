@@ -67,10 +67,7 @@ export default function Message() {
         user: users[index].user,
         time: users[index].userMessage.dataInput1,
         color: users[index].userMessage.colorInput1,
-        message: users[index].userMessage.messageInput1.replace(
-          /<\/br>/g,
-          "\n"
-        ),
+        message: users[index].userMessage.messageInput1.replace(/<nl>/g, "\n"),
       },
     ]);
     setUsers((prevUsers) => {
