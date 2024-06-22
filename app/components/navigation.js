@@ -2,7 +2,7 @@
 import "./components.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaGear } from "react-icons/fa6";
+import { FaHamburger } from "react-icons/fa";
 
 import {
   Dropdown,
@@ -69,7 +69,7 @@ export default function Navigation() {
       <Dropdown className="bg-white/5 backdrop-blur	">
         <DropdownTrigger>
           <Button variant="bordered">
-            <FaGear className="text-xl" />
+            <FaHamburger className="text-xl" />
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Dynamic Actions" variant="light">
