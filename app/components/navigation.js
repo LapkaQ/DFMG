@@ -66,7 +66,7 @@ export default function Navigation() {
           <p className="font-[300] -skew-x-12 gg-sans">DCFaker</p>
         </Link>
       </div>
-      <Dropdown className="bg-white/5">
+      <Dropdown className="bg-white/5 backdrop-blur	">
         <DropdownTrigger>
           <Button variant="bordered">
             <FaGear className="text-xl" />
