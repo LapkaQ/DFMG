@@ -2,17 +2,33 @@
 import Image from "next/image";
 import Header from "./components/header";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-
+import { useMediaQuery } from "react-responsive";
 import { Button, Link } from "@nextui-org/react";
+import { useState, useEffect } from "react";
 import "./mainPage.css";
 export default function Home() {
+  const isMobile = useMediaQuery({ query: "(max-width: 1000px)" });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
   return (
     <main className="flex flex-col items-center gap-20">
       <Header />
 
       <div className="flex flex-col items-center gap-20">
-        <div className="contentMain flex-row ">
-          <div className="contentInfo flex flex-col gap-5 items-start w-auto">
+        <div
+          className={`contentMain  ${
+            isMobile ? `flex-col justify-center` : `flex-row justify-between`
+          }`}
+        >
+          <div
+            className={`contentInfo flex flex-col gap-5  w-auto ${
+              isMobile ? `items-center` : "items-start"
+            }`}
+          >
             <h1 className="text-3xl  font-[300] 	">Profile Viewer</h1>
             <p className="">
               Profile Viewer is a tool that allows you to display basic
@@ -41,8 +57,18 @@ export default function Home() {
           />
         </div>
 
-        <div className="contentMain flex-row-reverse ">
-          <div className="contentInfo flex flex-col gap-5 items-end w-auto">
+        <div
+          className={`contentMain  ${
+            isMobile
+              ? `flex-col justify-center`
+              : `flex-row-reverse justify-between`
+          }`}
+        >
+          <div
+            className={`contentInfo flex flex-col gap-5  w-auto ${
+              isMobile ? `items-center` : "items-end"
+            }`}
+          >
             <h1 className="text-3xl  font-[300] 	">Server Viewer</h1>
             <p className="">
               Server Viewer is an advanced tool for displaying detailed
@@ -71,8 +97,16 @@ export default function Home() {
           />
         </div>
 
-        <div className="contentMain flex-row ">
-          <div className="contentInfo flex flex-col gap-5 items-start w-auto">
+        <div
+          className={`contentMain  ${
+            isMobile ? `flex-col justify-center` : `flex-row justify-between`
+          }`}
+        >
+          <div
+            className={`contentInfo flex flex-col gap-5  w-auto ${
+              isMobile ? `items-center` : "items-start"
+            }`}
+          >
             <h1 className="text-3xl  font-[300] 	">Message Creator</h1>
             <p className="">
               Message Creator is a creative tool that allows you to create fake

@@ -7,14 +7,3 @@
   gap: 100px;
   flex-shrink: 1;
 }
-
-@media (max-width: 1000px) {
-  .contentMain {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .contentInfo {
-    align-items: center;
-  }
-}
