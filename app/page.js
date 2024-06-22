@@ -3,7 +3,7 @@ import Image from "next/image";
 import Header from "./components/header";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 
-import { Button } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import "./mainPage.css";
 export default function Home() {
   return (
@@ -11,111 +11,93 @@ export default function Home() {
       <Header />
 
       <div className="flex flex-col items-center gap-20">
-        <div className="contentMain">
-          <p className="w-1/2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere,
-            hic laboriosam! Sequi quasi illo repellat ipsum ad, pariatur commodi
-            mollitia illum, tempora sunt modi qui assumenda? Modi doloribus
-            magnam et. Illo ea perferendis totam atque repellendus recusandae
-            architecto molestias id, aspernatur libero iste, labore sapiente
-            repudiandae magnam necessitatibus ipsa consequuntur nesciunt, eum
-            asperiores inventore eos error. Commodi iure mollitia nesciunt.
-            Corporis eius iure quaerat, alias cumque nobis nemo ab reprehenderit
-            ipsum voluptatibus vel voluptate qui non voluptates repellat eaque
-            quibusdam? Deserunt impedit ullam iusto laborum suscipit et optio
-            harum reprehenderit. Saepe mollitia necessitatibus obcaecati, in
-            distinctio est expedita voluptatibus hic. Repudiandae labore, vitae
-            provident eveniet ipsum aut perferendis rerum esse veniam sint quod
-            beatae laboriosam! Nulla quidem beatae consequuntur natus!
-            Perferendis saepe provident odit iusto blanditiis, maiores iste esse
-            libero sed rem enim eum quibusdam iure dicta ut. Ipsum, illo?
-            Impedit dicta ipsa provident dolores vitae asperiores voluptatem qui
-            hic? Deleniti reiciendis corrupti itaque? Asperiores cum voluptate
-            libero corporis dolore dolorem vero unde quae adipisci nemo.
-            Explicabo quia, obcaecati veritatis exercitationem, blanditiis et
-            itaque iusto eos eum ipsa ab ducimus. Quaerat nisi cumque quia nemo,
-            eligendi maxime quae nam veritatis perspiciatis laborum dolores
-            laboriosam, consequuntur fuga omnis deleniti! Et, maxime! Ea, vel?
-            Reiciendis dolor perspiciatis dicta officia illo, impedit odit.
-            Maiores eius molestias, iste, consequatur facilis saepe atque
-            tempora sed provident quas odio? Consequuntur neque vero dolore,
-            perferendis rerum quasi suscipit odit natus delectus tenetur
-            consectetur quas blanditiis ipsum expedita. Totam praesentium
-            laboriosam possimus voluptatem officiis porro nesciunt suscipit vel
-            nihil est optio consequuntur veniam, tempora libero, nam dolore
-            quisquam tempore, atque vitae molestias? Delectus natus totam esse
-            consequatur similique. Illum vitae, aut eos totam, fuga laboriosam
-            placeat pariatur voluptates culpa eum dolorum doloremque recusandae
-            at in facilis temporibus eligendi cum excepturi eveniet consectetur
-            beatae earum? Impedit tenetur saepe earum.
-          </p>
+        <div className="contentMain flex-row ">
+          <div className="contentInfo flex flex-col gap-5 items-start w-auto">
+            <h1 className="text-3xl  font-[300] 	">Profile Viewer</h1>
+            <p className="">
+              Profile Viewer is a tool that allows you to display basic
+              information about users by entering their unique identifier (ID).
+              After entering the
+              <span>
+                {" "}
+                <Link href="#accordionId">user ID</Link>
+              </span>
+              , the tool automatically fetches and displays their avatar and
+              banner, if the user has them. This allows you to quickly and
+              conveniently check visual information related to a given profile
+              without having to log into the platform.
+            </p>
+            <Link href="/user">
+              <Button color="secondary">Profile Viewer</Button>
+            </Link>
+          </div>
           <Image
             src="/images/profileViewer.png"
             alt="profile image"
-            className="w-1/3 rounded-3xl shadow-2xl"
+            className="rounded-3xl shadow-2xl object-cover"
             width={500}
             height={500}
             quality={100}
-            style={{
-              width: "500px",
-              height: "500px",
-            }}
           />
         </div>
-        <div className="contentMain">
+
+        <div className="contentMain flex-row-reverse ">
+          <div className="contentInfo flex flex-col gap-5 items-end w-auto">
+            <h1 className="text-3xl  font-[300] 	">Server Viewer</h1>
+            <p className="">
+              Server Viewer is an advanced tool for displaying detailed
+              information about Discord servers. Just enter the
+              <span>
+                {" "}
+                <Link href="#accordionId">server ID</Link>
+              </span>
+              , to instantly see its icon and splash (the graphic displayed
+              during server invites). The tool requires the server to have the
+              "community" feature enabled, ensuring that the displayed
+              information is always up-to-date and consistent with the server
+              settings.
+            </p>
+            <Link href="/server">
+              <Button color="secondary">Server Viewer</Button>
+            </Link>
+          </div>
           <Image
-            src="/images/messageCreator.png"
-            alt="profile image"
-            className="w-1/3 rounded-3xl shadow-2xl"
+            src="/images/serverViewer.png"
+            alt="server image"
+            className="rounded-3xl shadow-2xl object-cover"
             width={500}
             height={500}
             quality={100}
-            style={{
-              width: "500px",
-              height: "500px",
-            }}
           />
-          <p className="w-1/2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere,
-            hic laboriosam! Sequi quasi illo repellat ipsum ad, pariatur commodi
-            mollitia illum, tempora sunt modi qui assumenda? Modi doloribus
-            magnam et. Illo ea perferendis totam atque repellendus recusandae
-            architecto molestias id, aspernatur libero iste, labore sapiente
-            repudiandae magnam necessitatibus ipsa consequuntur nesciunt, eum
-            asperiores inventore eos error. Commodi iure mollitia nesciunt.
-            Corporis eius iure quaerat, alias cumque nobis nemo ab reprehenderit
-            ipsum voluptatibus vel voluptate qui non voluptates repellat eaque
-            quibusdam? Deserunt impedit ullam iusto laborum suscipit et optio
-            harum reprehenderit. Saepe mollitia necessitatibus obcaecati, in
-            distinctio est expedita voluptatibus hic. Repudiandae labore, vitae
-            provident eveniet ipsum aut perferendis rerum esse veniam sint quod
-            beatae laboriosam! Nulla quidem beatae consequuntur natus!
-            Perferendis saepe provident odit iusto blanditiis, maiores iste esse
-            libero sed rem enim eum quibusdam iure dicta ut. Ipsum, illo?
-            Impedit dicta ipsa provident dolores vitae asperiores voluptatem qui
-            hic? Deleniti reiciendis corrupti itaque? Asperiores cum voluptate
-            libero corporis dolore dolorem vero unde quae adipisci nemo.
-            Explicabo quia, obcaecati veritatis exercitationem, blanditiis et
-            itaque iusto eos eum ipsa ab ducimus. Quaerat nisi cumque quia nemo,
-            eligendi maxime quae nam veritatis perspiciatis laborum dolores
-            laboriosam, consequuntur fuga omnis deleniti! Et, maxime! Ea, vel?
-            Reiciendis dolor perspiciatis dicta officia illo, impedit odit.
-            Maiores eius molestias, iste, consequatur facilis saepe atque
-            tempora sed provident quas odio? Consequuntur neque vero dolore,
-            perferendis rerum quasi suscipit odit natus delectus tenetur
-            consectetur quas blanditiis ipsum expedita. Totam praesentium
-            laboriosam possimus voluptatem officiis porro nesciunt suscipit vel
-            nihil est optio consequuntur veniam, tempora libero, nam dolore
-            quisquam tempore, atque vitae molestias? Delectus natus totam esse
-            consequatur similique. Illum vitae, aut eos totam, fuga laboriosam
-            placeat pariatur voluptates culpa eum dolorum doloremque recusandae
-            at in facilis temporibus eligendi cum excepturi eveniet consectetur
-            beatae earum? Impedit tenetur saepe earum.
-          </p>
+        </div>
+
+        <div className="contentMain flex-row ">
+          <div className="contentInfo flex flex-col gap-5 items-start w-auto">
+            <h1 className="text-3xl  font-[300] 	">Message Creator</h1>
+            <p className="">
+              Message Creator is a creative tool that allows you to create fake
+              messages that look identical to those sent on Discord. You can
+              customize the message content, set your own send time, and choose
+              the nickname color. It's an ideal solution for creating realistic
+              message examples that can be used for humorous, educational, or
+              presentation purposes.
+            </p>
+            <Link href="/message">
+              <Button color="secondary">Message Creator</Button>
+            </Link>
+          </div>
+          <Image
+            src="/images/messageCreator.png"
+            alt="created message image"
+            className="rounded-3xl shadow-2xl object-cover"
+            width={500}
+            height={500}
+            quality={100}
+          />
         </div>
       </div>
 
-      <div className="w-[70%]">
+      <div className="w-[70%]" id="accordionId">
         <Accordion variant="light" className="bg-black/10 rounded-xl">
           <AccordionItem
             key="1"
