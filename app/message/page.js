@@ -148,7 +148,7 @@ export default function Message() {
               className="messageUsername gg-sans text-base font-[500]"
               style={{ color: message.color }}
             >
-              {message.user.name}
+              {message.user.name ? message.user.name : message.user.username}
             </p>
             <p className="messageTime gg-sans font-[400] text-[#a6aeb8] text-nowrap">
               {message.time}
