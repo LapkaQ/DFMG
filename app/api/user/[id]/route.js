@@ -4,12 +4,20 @@ export async function GET(res, req) {
   const token = process.env.DISCORD_TOKEN;
   console.log(process.env.DISCORD_TOKEN);
   const id = req.params.id;
+
+  const cacheBuster = new Date().getTime();
+
   try {
-    const response = await fetch(`https://discord.com/api/v10/users/${id}`, {
-      headers: {
-        Authorization: `Bot ${token}`,
-      },
-    });
+    const response = await fetch(
+      `https://discord.com/api/v10/users/${id}?cache_buster=${cacheBuster}`,
+      {
+        headers: {
+          Authorization: `Bot ${token}`,
+          "Cache-Control": "no-cache",
+        },
+      }
+    );
+    console.log(response);
     console.log(response.status);
     if (!response.ok) {
       throw new Error("Failed to fetch user data");
