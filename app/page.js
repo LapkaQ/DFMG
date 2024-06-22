@@ -53,7 +53,7 @@ export default function Home() {
               </span>
               , to instantly see its icon and splash (the graphic displayed
               during server invites). The tool requires the server to have the
-              "community" feature enabled, ensuring that the displayed
+              &quot;community&quot; feature enabled, ensuring that the displayed
               information is always up-to-date and consistent with the server
               settings.
             </p>
@@ -78,9 +78,9 @@ export default function Home() {
               Message Creator is a creative tool that allows you to create fake
               messages that look identical to those sent on Discord. You can
               customize the message content, set your own send time, and choose
-              the nickname color. It's an ideal solution for creating realistic
-              message examples that can be used for humorous, educational, or
-              presentation purposes.
+              the nickname color. It&apos;s an ideal solution for creating
+              realistic message examples that can be used for humorous,
+              educational, or presentation purposes.
             </p>
             <Link href="/message">
               <Button color="secondary">Message Creator</Button>
@@ -102,7 +102,7 @@ export default function Home() {
           <AccordionItem
             key="1"
             aria-label="Accordion 1"
-            title="How To Enable Developer Mode            "
+            title="How To Enable Developer Mode"
           >
             <Accordion variant="bordered">
               <AccordionItem
@@ -115,8 +115,8 @@ export default function Home() {
                 desktop app to open up your User Settings. <br />
                 2. Then head to Advanced. <br />
                 3. Now, tap on the main toggle next to Developer Mode to enable.
-                A “checkmark” means it’s enabled, while an “x” means it’s
-                disabled.
+                A &quot;checkmark&quot; means it&apos;s enabled, while an
+                &quot;x&quot; means it&apos;s disabled.
               </AccordionItem>
               <AccordionItem key="2" aria-label="Accordion 2" title="Mobile">
                 1. Tap on your Avatar in the bottom-right corner. <br />
@@ -124,16 +124,15 @@ export default function Home() {
                 3. Now, scroll down until you see Advanced under App Settings.{" "}
                 <br />
                 4. Finally, tap on the toggle next to Developer Mode. A
-                “checkmark” means it’s enabled, while an “x” means it’s
-                disabled.
+                &quot;checkmark&quot; means it&apos;s enabled, while an
+                &quot;x&quot; means it&apos;s disabled.
               </AccordionItem>
             </Accordion>
           </AccordionItem>
           <AccordionItem
             key="2"
             aria-label="Accordion 2"
-            title="How To Find A User ID Number
-"
+            title="How To Find A User ID Number"
           >
             <Accordion variant="bordered">
               <AccordionItem key="1" aria-label="Accordion 1" title="Desktop">
@@ -160,7 +159,7 @@ export default function Home() {
               <AccordionItem key="1" aria-label="Accordion 1" title="Desktop">
                 1. Navigate to the server you want to copy the ID from. <br />
                 2. right-click on the server icon, and then tap on Copy Server
-                ID.. <br />
+                ID. <br />
                 3. Now you can paste this server ID number where needed.
               </AccordionItem>
               <AccordionItem key="2" aria-label="Accordion 2" title="Mobile">
