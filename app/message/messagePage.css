@@ -23,8 +23,9 @@ p {
 }
 
 .messageTime {
-  font-size: 11px;
-  transform: translateY(-3px) scale(1.1);
+  font-size: 10px;
+  transform-origin: left;
+  transform: translateY(-3px) translateX(-4px) scaleX(1.25) scaleY(1.1);
 }
 
 .full-message img {

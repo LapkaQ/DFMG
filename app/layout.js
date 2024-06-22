@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import Providers from "./providers";
 import Navigation from "./components/navigation";
 import Footer from "./components/footer";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import "./globals.css";
 
 import localFont from "next/font/local";
@@ -44,6 +45,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={ggsans.className}>
         <Navigation />
         <Providers>{children}</Providers>
