@@ -57,7 +57,8 @@ export default function RootLayout({ children }) {
           content="discord, discord tools, profile viewer, server viewer, message creator, fake messages, discord profile viewer, discord server viewer, discord server details, discord icons, discord splash, message generator, message examples, discord utilities"
         />
 
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#642ff7" />
       </head>
       <GoogleAnalytics />
