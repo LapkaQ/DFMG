@@ -21,6 +21,7 @@ export default function Home({ params }) {
   const [id, setId] = useState("");
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     if (params.id != null) {
       setId(params.id);
@@ -28,6 +29,7 @@ export default function Home({ params }) {
       console.log("null");
     }
   }, []);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log(`Fetching user with ID: ${id}`);
@@ -55,19 +57,6 @@ export default function Home({ params }) {
   };
   return (
     <>
-      <Head>
-        <title>DC Faker | Profile Viewer</title>
-        <meta
-          name="description"
-          content="Profile Viewer displays basic user information, including avatar and banner, by entering their unique ID."
-        />
-        <meta property="og:title" content="DC Faker | Profile Viewer" />
-        <meta
-          property="og:description"
-          content="Profile Viewer displays basic user information, including avatar and banner, by entering their unique ID."
-        />
-        <meta property="og:url" content="https://www.dcfaker.xyz/user" />
-      </Head>
       <main className="flex justify-between items-center gap-5 flex-col">
         <Header text="Discord Profile Viewer" custom="True" height="100" />
 
