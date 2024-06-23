@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="theme-color" content="#642ff7" />
       </head>
       <GoogleAnalytics />
       <body className={ggsans.className}>
