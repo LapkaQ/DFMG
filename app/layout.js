@@ -41,12 +41,22 @@ export const metadata = {
   title: "DC Faker",
   description:
     "DCFaker to platforma umożliwiająca interaktywne wyświetlanie informacji o profilach użytkowników oraz szczegółowych danych dotyczących serwerów Discord, oraz tworzenie autentycznych, fikcyjnych wiadomości, idealnych do różnorodnych zastosowań.",
+  image: "/favicon.ico",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content={metadata.image} />
+        <meta property="og:url" content="https://www.dcfaker.xyz/" />
+        <meta
+          name="keywords"
+          content="discord, discord tools, profile viewer, server viewer, message creator, fake messages, discord profile viewer, discord server viewer, discord server details, discord icons, discord splash, message generator, message examples, discord utilities"
+        />
+
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#642ff7" />
       </head>
