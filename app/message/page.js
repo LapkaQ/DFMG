@@ -59,26 +59,43 @@ export default function Message() {
     });
   };
 
-  const handleCreateMessage = (e, index) => {
+  const handleCreateMessage = async (e, index) => {
     e.preventDefault();
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      {
-        user: users[index].user,
-        time: users[index].userMessage.dataInput1,
-        color: users[index].userMessage.colorInput1,
-        message: users[index].userMessage.messageInput1.replace(/<nl>/g, "\n"),
-      },
-    ]);
-    setUsers((prevUsers) => {
-      const newUsers = [...prevUsers];
-      newUsers[index].userMessage = {
-        dataInput1: "",
-        messageInput1: "",
-        colorInput1: "",
-      };
-      return newUsers;
-    });
+    const newMessage = {
+      user: users[index].user,
+      time: users[index].userMessage.dataInput1,
+      color: users[index].userMessage.colorInput1,
+      message: users[index].userMessage.messageInput1.replace(/<nl>/g, "\n"),
+    };
+
+    try {
+      const res = await fetch("/api/addvalue", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: newMessage }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Failed to add value");
+      }
+
+      setMessages((prevMessages) => [...prevMessages, newMessage]);
+
+      setUsers((prevUsers) => {
+        const newUsers = [...prevUsers];
+        newUsers[index].userMessage = {
+          dataInput1: "",
+          messageInput1: "",
+          colorInput1: "",
+        };
+        return newUsers;
+      });
+    } catch (err) {
+      console.error("Error during submission:", err);
+    }
   };
 
   const handleRemoveLastMessage = () => {

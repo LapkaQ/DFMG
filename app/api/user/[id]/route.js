@@ -50,6 +50,7 @@ export async function GET(res, req) {
         banner,
         name: user.global_name,
         avatar_dec,
+        id: user.id,
       }),
       {
         status: 200,
